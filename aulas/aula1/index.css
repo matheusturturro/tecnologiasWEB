@@ -1,0 +1,103 @@
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 800; 
+}
+
+p {
+    font-weight: 400; 
+}
+
+header {
+    position: relative; 
+    height: 5em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+}
+
+#linhaHorizontal {
+    border: none;
+    border-top: 2px solid #afafaf; 
+    width: 90%;
+    position: absolute;
+    left: 5%;
+}
+
+header h1 {
+    position: absolute;
+    right: 2em; 
+    bottom: 0.3em;
+    color: #918b8b;
+}
+
+
+/*barra lateral aqui embaixo*/
+aside {
+    float: left;
+    background-color: #afafaf;
+    width: 7rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+}
+
+aside ul {
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: #e4dddd;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    font-weight: 800 ;
+    font-size: 12px;
+    background-color: #e4dddd;
+    color: #5a5656;
+    padding: 10px;
+    width: 80%; 
+    text-align: left;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+@media (max-width: 600px) {
+    aside {
+        width: 100%; 
+        height: auto; 
+        padding: 10px 0;
+    }
+
+    aside ul {
+        flex-direction: row; 
+        justify-content: space-around; 
+        height: auto;
+    }
+
+    aside ul li {
+        width: auto;
+        padding: 8px 12px;
+    }
+}
+
+main{
+    background-color: aquamarine;
+    width: 85%;
+    margin-right: 5%;
+    float: right;
+}
