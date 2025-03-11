@@ -1,0 +1,302 @@
+Cheatsheet Rápido
+Propriedade	Descrição
+display: flex	Cria um container flex
+justify-content	Alinha no eixo principal
+align-items	Alinha no eixo transversal
+flex-direction	Define a direção dos itens
+flex-wrap	Controla a quebra de linha
+flex: 1	Item ocupa espaço disponível
+gap	Espaço entre itens
+
+
+
+
+Componentes do Flexbox
+Elemento pai que envolve os itens.
+Elementos filhos diretos do container.
+
+Propriedades do Container (Pai)
+
+Define o container como flexível.
+.container {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Define a direção do eixo principal (em qual direção os itens são colocados).
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Alinha os itens ao longo do eixo principal. (horizontal)
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+
+        space-between: Distribui o espaço igualmente entre os itens.
+
+        space-around: Espaço igual ao redor de cada item.
+
+        space-evenly: Espaço igual entre e ao redor dos itens.
+
+
+
+
+
+
+
+
+
+
+
+Alinha os itens ao longo do eixo transversal (vertical) (perpendicular ao eixo principal).
+.container {
+  align-items: stretch | flex-start | flex-end | center | baseline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Controla se os itens devem quebrar para uma nova linha.
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+nowrap (padrão): Todos os itens em uma única linha.
+
+wrap: Quebra em múltiplas linhas.
+
+
+
+
+
+
+
+
+
+
+
+
+Alinha linhas de itens no eixo transversal (quando há múltiplas linhas).
+.container {
+  align-content: stretch | flex-start | flex-end | center | space-between | space-around;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+flex-flow (Shorthand)
+Combina flex-direction e flex-wrap.
+.container {
+  flex-flow: row wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Propriedades dos Itens (Filhos)
+
+Controla a ordem dos itens (sem alterar o HTML).
+.item {
+  order: 2; /* Valor padrão: 0 */
+}
+
+
+
+
+
+
+
+
+
+
+
+Define a capacidade de um item crescer (proporcionalmente) para ocupar espaço extra.
+.item {
+  flex-grow: 2; /* Padrão: 0 (não cresce) */
+}
+
+
+
+
+
+
+
+
+
+
+
+Define a capacidade de um item encolher (proporcionalmente) se necessário.
+.item {
+  flex-shrink: 1; /* Padrão: 1 */
+}
+
+
+
+
+
+
+
+
+
+
+
+Define o tamanho inicial de um item antes de distribuir o espaço restante.
+.item {
+  flex-basis: 200px | 30% | auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+Sobrescreve o align-items do container para um item específico.
+.item {
+  align-self: auto | stretch | flex-start | flex-end | center | baseline;
+}
+
+
+
+
+
+
+
+
+
+
+
+Exemplo 1: Centralização Perfeita
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+
+
+
+
+Exemplo 2: Layout de Navegação
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+
+Exemplo 3: Grid Responsivo
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item {
+  flex: 1 1 200px; /* Cresce, encolhe, base de 200px */
+}
+
+
+
+
+
+
+
+Margens Automáticas
+Use margin-left: auto ou margin-right: auto para empurrar itens para os cantos:
+
+.item:last-child {
+  margin-left: auto;
+}
+
+
+
+
+
+
+
+
+
+Holy Grail Layout (Layout Clássico)
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+}
+
+.content {
+  flex: 1;
+}
